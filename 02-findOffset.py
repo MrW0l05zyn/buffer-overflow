@@ -25,5 +25,4 @@ except Exception as error:
     
 finally:
     # cierre de conexión
-    s.close()    
-
+    s.close()
