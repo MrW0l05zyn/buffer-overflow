@@ -23,7 +23,7 @@ offsetESP = 0
 buffer = 3000
 
 # PASO IV
-badchars = [0x00, 0x01, 0x0a, 0x0d] # badchars = [0x00, 0x0a, 0x0d]
+badchars = [] # badchars = [0x00, 0x0a, 0x0d]
 badcharsSequence = bytes(c for c in range(256) if c not in badchars)
 
 # PASO V
