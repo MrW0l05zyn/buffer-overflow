@@ -26,6 +26,7 @@ for caracteres in buffer:
         # usuario
         s.send(b'USER MrW0l05zyn\r\n')
         print(s.recv(1024))
+        
         # password
         s.send(b'PASS ' + caracteres + b'\r\n')
         print(s.recv(1024))
