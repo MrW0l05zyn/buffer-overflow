@@ -7,7 +7,7 @@ buffer = []
 cantidadFuzzing = 50
 aumentoFuzzing = 200
 
-# configuración de fuzzin
+# configuración de fuzzing
 while len(buffer) < cantidadFuzzing:
     buffer.append(b'A' * aumentoFuzzing)
     aumentoFuzzing += 200
